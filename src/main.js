@@ -6,6 +6,7 @@ const path = require('path');
 // Importación de rutas
 const pingRoutes = require('./routes/pingRoutes');
 const playerRoutes = require('./routes/players')
+const gameRoutes = require('./routes/games')
 
 // Inicializando Express
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Conexi´m de rutas
 app.use('/', pingRoutes);
 app.use('/players',playerRoutes);
+app.use('/games',gameRoutes);
 
 // Arramnque del servidor
 app.listen(PORT, () => {

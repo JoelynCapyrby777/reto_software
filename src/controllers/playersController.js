@@ -37,5 +37,4 @@ const createPlayer = async (req, res) => {
     }
 };
 
-
-module.exports = { createPlayer};
+module.exports = { createPlayer };
