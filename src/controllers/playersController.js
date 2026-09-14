@@ -37,4 +37,14 @@ const createPlayer = async (req, res) => {
     }
 };
 
-module.exports = { createPlayer };
+const getPlayers = async (req, res ) => {
+    try {
+        const [players] = await db.query('SELECT * FROM Usuario');
+        res.json(players);
+    } catch (error){
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener los datos' });
+    }
+};
+
+module.exports = { createPlayer, getPlayers };
