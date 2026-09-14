@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { createPlayer} = require('../controllers/playersController');
+const { getPlayers , createPlayer} = require('../controllers/playersController');
 
-
+router.get('/', getPlayers);
 router.post('/', createPlayer);
 
 module.exports = router;
